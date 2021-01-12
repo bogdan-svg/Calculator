@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\b.gaiko\\Documents\\GitHub\\Calculator\\Calculator\\Calculator\\Calculator.csproj": {}
+    "C:\\Users\\b.gaiko\\Documents\\GitHub\\Calculator\\Calculator\\Calculator.csproj": {}
   },
   "projects": {
-    "C:\\Users\\b.gaiko\\Documents\\GitHub\\Calculator\\Calculator\\Calculator\\Calculator.csproj": {
+    "C:\\Users\\b.gaiko\\Documents\\GitHub\\Calculator\\Calculator\\Calculator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\b.gaiko\\Documents\\GitHub\\Calculator\\Calculator\\Calculator\\Calculator.csproj",
+        "projectUniqueName": "C:\\Users\\b.gaiko\\Documents\\GitHub\\Calculator\\Calculator\\Calculator.csproj",
         "projectName": "Calculator",
-        "projectPath": "C:\\Users\\b.gaiko\\Documents\\GitHub\\Calculator\\Calculator\\Calculator\\Calculator.csproj",
+        "projectPath": "C:\\Users\\b.gaiko\\Documents\\GitHub\\Calculator\\Calculator\\Calculator.csproj",
         "packagesPath": "C:\\Users\\b.gaiko\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\b.gaiko\\Documents\\GitHub\\Calculator\\Calculator\\Calculator\\obj\\",
+        "outputPath": "C:\\Users\\b.gaiko\\Documents\\GitHub\\Calculator\\Calculator\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\b.gaiko\\AppData\\Roaming\\NuGet\\NuGet.Config",
