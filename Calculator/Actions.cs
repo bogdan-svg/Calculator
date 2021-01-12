@@ -6,6 +6,9 @@ namespace Calculator
 {
     class Actions
     {
+        /// <summary>
+        /// ////////////////////////////////////////////////////////////////////////
+        /// </summary>
         double result;
         double numbersecond;
         double rezultend;
