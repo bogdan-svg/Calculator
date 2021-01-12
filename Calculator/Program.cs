@@ -12,7 +12,7 @@ namespace Calculator
             double numberfirst;
             char sign;
 
-
+            
 
             while (true)
             {
@@ -55,7 +55,7 @@ namespace Calculator
                             }
                             else if (sign == '*')
                             {
-                                ac.multiplication(numberfirst, sign);
+                                //ac.multiplication(numberfirst, sign);
                                 Console.WriteLine("exit? esc");
                                 if (Console.ReadKey().Key == ConsoleKey.Escape)
                                 {
@@ -69,7 +69,7 @@ namespace Calculator
                             }
                             else if (sign == '/')
                             {
-                                ac.division(numberfirst, sign);
+                                //ac.division(numberfirst, sign);
                                 Console.WriteLine("exit? esc");
                                 if (Console.ReadKey().Key == ConsoleKey.Escape)
                                 {

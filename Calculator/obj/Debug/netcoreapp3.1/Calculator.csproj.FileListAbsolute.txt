@@ -37,3 +37,16 @@ C:\Users\b.gaiko\Documents\GitHub\Calculator\Calculator\Calculator\obj\Debug\net
 C:\Users\b.gaiko\Documents\GitHub\Calculator\Calculator\Calculator\obj\Debug\netcoreapp3.1\Calculator.dll
 C:\Users\b.gaiko\Documents\GitHub\Calculator\Calculator\Calculator\obj\Debug\netcoreapp3.1\Calculator.pdb
 C:\Users\b.gaiko\Documents\GitHub\Calculator\Calculator\Calculator\obj\Debug\netcoreapp3.1\Calculator.genruntimeconfig.cache
+C:\Users\b.gaiko\Documents\GitHub\Calculator\Calculator\bin\Debug\netcoreapp3.1\Calculator.exe
+C:\Users\b.gaiko\Documents\GitHub\Calculator\Calculator\bin\Debug\netcoreapp3.1\Calculator.deps.json
+C:\Users\b.gaiko\Documents\GitHub\Calculator\Calculator\bin\Debug\netcoreapp3.1\Calculator.runtimeconfig.json
+C:\Users\b.gaiko\Documents\GitHub\Calculator\Calculator\bin\Debug\netcoreapp3.1\Calculator.runtimeconfig.dev.json
+C:\Users\b.gaiko\Documents\GitHub\Calculator\Calculator\bin\Debug\netcoreapp3.1\Calculator.dll
+C:\Users\b.gaiko\Documents\GitHub\Calculator\Calculator\bin\Debug\netcoreapp3.1\Calculator.pdb
+C:\Users\b.gaiko\Documents\GitHub\Calculator\Calculator\obj\Debug\netcoreapp3.1\Calculator.csprojAssemblyReference.cache
+C:\Users\b.gaiko\Documents\GitHub\Calculator\Calculator\obj\Debug\netcoreapp3.1\Calculator.AssemblyInfoInputs.cache
+C:\Users\b.gaiko\Documents\GitHub\Calculator\Calculator\obj\Debug\netcoreapp3.1\Calculator.AssemblyInfo.cs
+C:\Users\b.gaiko\Documents\GitHub\Calculator\Calculator\obj\Debug\netcoreapp3.1\Calculator.csproj.CoreCompileInputs.cache
+C:\Users\b.gaiko\Documents\GitHub\Calculator\Calculator\obj\Debug\netcoreapp3.1\Calculator.dll
+C:\Users\b.gaiko\Documents\GitHub\Calculator\Calculator\obj\Debug\netcoreapp3.1\Calculator.pdb
+C:\Users\b.gaiko\Documents\GitHub\Calculator\Calculator\obj\Debug\netcoreapp3.1\Calculator.genruntimeconfig.cache
