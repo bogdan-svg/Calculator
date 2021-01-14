@@ -7,21 +7,26 @@ namespace Calculator
     class Actions
     {
                 
-        double rezultend;
+        double rezultend =0 ;
+        
         char ex;
 
         Method mt = new Method();
 
         public void plus(double numberfirst, char sign)
         {
-            mt.Begin(numberfirst, sign, out double result, out double numbersecond);
+            Console.Clear();
+            Console.WriteLine($"{numberfirst} {sign} number 2");
+
+            mt.Begin(numberfirst, out double result, out double numbersecond);
             
             Console.Clear();
-            Console.WriteLine($"{numberfirst} {sign} {numbersecond} = and or + - * /");
+            Console.WriteLine($"{numberfirst} {sign} {numbersecond} = and or + - * /");                      
 
             char.TryParse(Console.ReadLine(), out ex);
             while (true)
-            {                
+            {
+                
                 if (ex == '=')
                 {
                     mt.Equal_0(numberfirst, sign, numbersecond, result);
@@ -31,28 +36,30 @@ namespace Calculator
                 {
                     Console.Clear();
                     Console.WriteLine($"{result} {ex} number");
-                    double c = Convert.ToDouble(Console.ReadLine());
-                    rezultend = result;
-                    result += c;
+
+                    mt.PL(ex, ref result, ref rezultend,  out double c );
+                   
                     Console.Clear();
-                    Console.WriteLine($"{rezultend} {ex} {c} = and?");
-                    ex = Convert.ToChar(Console.ReadLine());// перевірити хуйня виходить подумати як замінити
+                    Console.WriteLine($"{rezultend} {ex} {c} = and?");                    
+                    ex = Convert.ToChar(Console.ReadLine()); // перевірити хуйня виходить подумати як замінити
+
                     if (ex == '=')
                     {
                         mt.Equal_1(rezultend, ex, c, result);
                         break;
-                    }
+                    }                                        
                 }
                 else if (ex == '-')
                 {
                     Console.Clear();
                     Console.WriteLine($"{result} {ex} number");
-                    double c = Convert.ToDouble(Console.ReadLine());
-                    rezultend = result;
-                    result -= c;
+
+                    mt.SB(ex, ref result, ref rezultend, out double c);
+
                     Console.Clear();
                     Console.WriteLine($"{rezultend} {ex} {c} = and");
                     ex = Convert.ToChar(Console.ReadLine());
+
                     if (ex == '=')
                     {
                         mt.Equal_1(rezultend, ex, c, result);
@@ -63,12 +70,13 @@ namespace Calculator
                 {
                     Console.Clear();
                     Console.WriteLine($"{result} {ex} number");
-                    double c = Convert.ToDouble(Console.ReadLine());
-                    rezultend = result;
-                    result *= c;
+
+                    mt.MUL(ex, ref result, ref rezultend, out double c);
+
                     Console.Clear();
                     Console.WriteLine($"{rezultend} {ex} {c} = and");
                     ex = Convert.ToChar(Console.ReadLine());
+
                     if (ex == '=')
                     {
                         mt.Equal_1(rezultend, ex, c, result);
@@ -79,12 +87,13 @@ namespace Calculator
                 {
                     Console.Clear();
                     Console.WriteLine($"{result} {ex} number");
-                    double c = Convert.ToDouble(Console.ReadLine());
-                    rezultend = result;
-                    result /= c;
+
+                    mt.DIV(ex, ref result, ref rezultend, out double c);
+
                     Console.Clear();
                     Console.WriteLine($"{rezultend} {ex} {c} = and");
                     ex = Convert.ToChar(Console.ReadLine());
+
                     if (ex == '=')
                     {
                         mt.Equal_1(rezultend, ex, c, result);
@@ -100,12 +109,12 @@ namespace Calculator
         }
         public void subtraction(double numberfirst, char sign)
         {
-            mt.Begin(numberfirst, sign, out double result, out double numbersecond);
+            mt.Begin(numberfirst, out double result, out double numbersecond);
+
             Console.Clear();
             Console.WriteLine($"{numberfirst} {sign} {numbersecond} = and or + - * /");
+
             char.TryParse(Console.ReadLine(), out ex);
-
-
             while (true)
             {
                 if (ex == '=')
@@ -116,68 +125,68 @@ namespace Calculator
                 else if (ex == '+')
                 {
                     Console.Clear();
-                    Console.WriteLine($"{result} {sign} number");
-                    double c = Convert.ToDouble(Console.ReadLine());
-                    rezultend = result;
-                    result += c;
+                    Console.WriteLine($"{result} {ex} number");
+
+                    mt.PL(ex, ref result, ref rezultend, out double c);
+
                     Console.Clear();
-                    Console.WriteLine($"{rezultend} {sign} {c} = and");
-                    sign = Convert.ToChar(Console.ReadLine());
-                    if (sign == '=')
+                    Console.WriteLine($"{rezultend} {ex} {c} = and?");
+                    ex = Convert.ToChar(Console.ReadLine()); // перевірити хуйня виходить подумати як замінити
+
+                    if (ex == '=')
                     {
-                        Console.Clear();
-                        Console.WriteLine($"{rezultend} + {c} = {result}");
+                        mt.Equal_1(rezultend, ex, c, result);
                         break;
                     }
                 }
                 else if (ex == '-')
                 {
                     Console.Clear();
-                    Console.WriteLine($"{result} {sign} number");
-                    double c = Convert.ToDouble(Console.ReadLine());
-                    rezultend = result;
-                    result -= c;
+                    Console.WriteLine($"{result} {ex} number");
+
+                    mt.SB(ex, ref result, ref rezultend, out double c);
+
                     Console.Clear();
-                    Console.WriteLine($"{rezultend} {sign} {c} = and");
-                    sign = Convert.ToChar(Console.ReadLine());
-                    if (sign == '=')
+                    Console.WriteLine($"{rezultend} {ex} {c} = and");
+                    ex = Convert.ToChar(Console.ReadLine());
+
+                    if (ex == '=')
                     {
-                        Console.Clear();
-                        Console.WriteLine($"{rezultend} + {c} = {result}");
+                        mt.Equal_1(rezultend, ex, c, result);
                         break;
                     }
                 }
                 else if (ex == '*')
                 {
                     Console.Clear();
-                    Console.WriteLine($"{result} {sign} number");
-                    double c = Convert.ToDouble(Console.ReadLine());
-                    rezultend = result;
-                    result *= c;
+                    Console.WriteLine($"{result} {ex} number");
+
+                    mt.MUL(ex, ref result, ref rezultend, out double c);
+
                     Console.Clear();
-                    Console.WriteLine($"{rezultend} {sign} {c} = and");
-                    sign = Convert.ToChar(Console.ReadLine());
-                    if (sign == '=')
+                    Console.WriteLine($"{rezultend} {ex} {c} = and");
+                    ex = Convert.ToChar(Console.ReadLine());
+
+                    if (ex == '=')
                     {
-                        Console.Clear();
-                        Console.WriteLine($"{rezultend} + {c} = {result}");
+                        mt.Equal_1(rezultend, ex, c, result);
                         break;
                     }
                 }
                 else if (ex == '/')
                 {
                     Console.Clear();
-                    Console.WriteLine($"{result} {sign} number");
-                    double c = Convert.ToDouble(Console.ReadLine());
-                    rezultend = result;
-                    result /= c;
+                    Console.WriteLine($"{result} {ex} number");
+
+                    mt.DIV(ex, ref result, ref rezultend, out double c);
+
                     Console.Clear();
-                    Console.WriteLine($"{rezultend} {sign} {c} = and");
-                    sign = Convert.ToChar(Console.ReadLine());
-                    if (sign == '=')
+                    Console.WriteLine($"{rezultend} {ex} {c} = and");
+                    ex = Convert.ToChar(Console.ReadLine());
+
+                    if (ex == '=')
                     {
-                        Console.Clear();
-                        Console.WriteLine($"{rezultend} + {c} = {result}");
+                        mt.Equal_1(rezultend, ex, c, result);
                         break;
                     }
                 }
@@ -190,84 +199,84 @@ namespace Calculator
         }
         public void multiplication(double numberfirst, char sign)
         {
-            mt.Begin(numberfirst, sign, out double result, out double numbersecond);
+            mt.Begin(numberfirst, out double result, out double numbersecond);
+
             Console.Clear();
             Console.WriteLine($"{numberfirst} {sign} {numbersecond} = and or + - * /");
-            char.TryParse(Console.ReadLine(), out ex);
 
+            char.TryParse(Console.ReadLine(), out ex);
             while (true)
             {
                 if (ex == '=')
                 {
-                    Console.Clear();
-                    Console.WriteLine($"{numberfirst} {sign} {numbersecond} = {result}");
+                    mt.Equal_0(numberfirst, sign, numbersecond, result);
                     break;
                 }
                 else if (ex == '+')
                 {
                     Console.Clear();
-                    Console.WriteLine($"{result} {sign} number");
-                    double c = Convert.ToDouble(Console.ReadLine());
-                    rezultend = result;
-                    result += c;
+                    Console.WriteLine($"{result} {ex} number");
+
+                    mt.PL(ex, ref result, ref rezultend, out double c);
+
                     Console.Clear();
-                    Console.WriteLine($"{rezultend} {sign} {c} = and");
-                    sign = Convert.ToChar(Console.ReadLine());
-                    if (sign == '=')
+                    Console.WriteLine($"{rezultend} {ex} {c} = and?");
+                    ex = Convert.ToChar(Console.ReadLine()); // перевірити хуйня виходить подумати як замінити
+
+                    if (ex == '=')
                     {
-                        Console.Clear();
-                        Console.WriteLine($"{rezultend} + {c} = {result}");
+                        mt.Equal_1(rezultend, ex, c, result);
                         break;
                     }
                 }
                 else if (ex == '-')
                 {
                     Console.Clear();
-                    Console.WriteLine($"{result} {sign} number");
-                    double c = Convert.ToDouble(Console.ReadLine());
-                    rezultend = result;
-                    result -= c;
+                    Console.WriteLine($"{result} {ex} number");
+
+                    mt.SB(ex, ref result, ref rezultend, out double c);
+
                     Console.Clear();
-                    Console.WriteLine($"{rezultend} {sign} {c} = and");
-                    sign = Convert.ToChar(Console.ReadLine());
-                    if (sign == '=')
+                    Console.WriteLine($"{rezultend} {ex} {c} = and");
+                    ex = Convert.ToChar(Console.ReadLine());
+
+                    if (ex == '=')
                     {
-                        Console.Clear();
-                        Console.WriteLine($"{rezultend} + {c} = {result}");
+                        mt.Equal_1(rezultend, ex, c, result);
                         break;
                     }
                 }
                 else if (ex == '*')
                 {
                     Console.Clear();
-                    Console.WriteLine($"{result} {sign} number");
-                    double c = Convert.ToDouble(Console.ReadLine());
-                    rezultend = result;
-                    result *= c;
+                    Console.WriteLine($"{result} {ex} number");
+
+                    mt.MUL(ex, ref result, ref rezultend, out double c);
+
                     Console.Clear();
-                    Console.WriteLine($"{rezultend} {sign} {c} = and");
-                    sign = Convert.ToChar(Console.ReadLine());
-                    if (sign == '=')
+                    Console.WriteLine($"{rezultend} {ex} {c} = and");
+                    ex = Convert.ToChar(Console.ReadLine());
+
+                    if (ex == '=')
                     {
-                        Console.Clear();
-                        Console.WriteLine($"{rezultend} + {c} = {result}");
+                        mt.Equal_1(rezultend, ex, c, result);
                         break;
                     }
                 }
                 else if (ex == '/')
                 {
                     Console.Clear();
-                    Console.WriteLine($"{result} {sign} number");
-                    double c = Convert.ToDouble(Console.ReadLine());
-                    rezultend = result;
-                    result /= c;
+                    Console.WriteLine($"{result} {ex} number");
+
+                    mt.DIV(ex, ref result, ref rezultend, out double c);
+
                     Console.Clear();
-                    Console.WriteLine($"{rezultend} {sign} {c} = and");
-                    sign = Convert.ToChar(Console.ReadLine());
-                    if (sign == '=')
+                    Console.WriteLine($"{rezultend} {ex} {c} = and");
+                    ex = Convert.ToChar(Console.ReadLine());
+
+                    if (ex == '=')
                     {
-                        Console.Clear();
-                        Console.WriteLine($"{rezultend} + {c} = {result}");
+                        mt.Equal_1(rezultend, ex, c, result);
                         break;
                     }
                 }
@@ -280,84 +289,84 @@ namespace Calculator
         }
         public void division(double numberfirst, char sign)
         {
-            mt.Begin(numberfirst, sign, out double result, out double numbersecond);
+            mt.Begin(numberfirst, out double result, out double numbersecond);
+
             Console.Clear();
             Console.WriteLine($"{numberfirst} {sign} {numbersecond} = and or + - * /");
-            char.TryParse(Console.ReadLine(), out ex);
 
+            char.TryParse(Console.ReadLine(), out ex);
             while (true)
             {
                 if (ex == '=')
                 {
-                    Console.Clear();
-                    Console.WriteLine($"{numberfirst} {sign} {numbersecond} = {result}");
+                    mt.Equal_0(numberfirst, sign, numbersecond, result);
                     break;
                 }
                 else if (ex == '+')
                 {
                     Console.Clear();
-                    Console.WriteLine($"{result} {sign} number");
-                    double c = Convert.ToDouble(Console.ReadLine());
-                    rezultend = result;
-                    result += c;
+                    Console.WriteLine($"{result} {ex} number");
+
+                    mt.PL(ex, ref result, ref rezultend, out double c);
+
                     Console.Clear();
-                    Console.WriteLine($"{rezultend} {sign} {c} = and");
-                    sign = Convert.ToChar(Console.ReadLine());
-                    if (sign == '=')
+                    Console.WriteLine($"{rezultend} {ex} {c} = and?");
+                    ex = Convert.ToChar(Console.ReadLine()); // перевірити хуйня виходить подумати як замінити
+
+                    if (ex == '=')
                     {
-                        Console.Clear();
-                        Console.WriteLine($"{rezultend} + {c} = {result}");
+                        mt.Equal_1(rezultend, ex, c, result);
                         break;
                     }
                 }
                 else if (ex == '-')
                 {
                     Console.Clear();
-                    Console.WriteLine($"{result} {sign} number");
-                    double c = Convert.ToDouble(Console.ReadLine());
-                    rezultend = result;
-                    result -= c;
+                    Console.WriteLine($"{result} {ex} number");
+
+                    mt.SB(ex, ref result, ref rezultend, out double c);
+
                     Console.Clear();
-                    Console.WriteLine($"{rezultend} {sign} {c} = and");
-                    sign = Convert.ToChar(Console.ReadLine());
-                    if (sign == '=')
+                    Console.WriteLine($"{rezultend} {ex} {c} = and");
+                    ex = Convert.ToChar(Console.ReadLine());
+
+                    if (ex == '=')
                     {
-                        Console.Clear();
-                        Console.WriteLine($"{rezultend} + {c} = {result}");
+                        mt.Equal_1(rezultend, ex, c, result);
                         break;
                     }
                 }
                 else if (ex == '*')
                 {
                     Console.Clear();
-                    Console.WriteLine($"{result} {sign} number");
-                    double c = Convert.ToDouble(Console.ReadLine());
-                    rezultend = result;
-                    result *= c;
+                    Console.WriteLine($"{result} {ex} number");
+
+                    mt.MUL(ex, ref result, ref rezultend, out double c);
+
                     Console.Clear();
-                    Console.WriteLine($"{rezultend} {sign} {c} = and");
-                    sign = Convert.ToChar(Console.ReadLine());
-                    if (sign == '=')
+                    Console.WriteLine($"{rezultend} {ex} {c} = and");
+                    ex = Convert.ToChar(Console.ReadLine());
+
+                    if (ex == '=')
                     {
-                        Console.Clear();
-                        Console.WriteLine($"{rezultend} + {c} = {result}");
+                        mt.Equal_1(rezultend, ex, c, result);
                         break;
                     }
                 }
                 else if (ex == '/')
                 {
                     Console.Clear();
-                    Console.WriteLine($"{result} {sign} number");
-                    double c = Convert.ToDouble(Console.ReadLine());
-                    rezultend = result;
-                    result /= c;
+                    Console.WriteLine($"{result} {ex} number");
+
+                    mt.DIV(ex, ref result, ref rezultend, out double c);
+
                     Console.Clear();
-                    Console.WriteLine($"{rezultend} {sign} {c} = and");
-                    sign = Convert.ToChar(Console.ReadLine());
-                    if (sign == '=')
+                    Console.WriteLine($"{rezultend} {ex} {c} = and");
+                    ex = Convert.ToChar(Console.ReadLine());
+
+                    if (ex == '=')
                     {
-                        Console.Clear();
-                        Console.WriteLine($"{rezultend} + {c} = {result}");
+                        mt.Equal_1(rezultend, ex, c, result);
                         break;
                     }
                 }

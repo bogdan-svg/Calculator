@@ -41,8 +41,8 @@ namespace Calculator
                             }
                             else if (sign == '-')
                             {
-                                ac.subtraction(numberfirst, sign);
-                                Console.WriteLine("exit? esc");
+                                //ac.subtraction(numberfirst, sign);
+                                //Console.WriteLine("exit? esc");
                                 if (Console.ReadKey().Key == ConsoleKey.Escape)
                                 {
                                     Process.GetCurrentProcess().Kill();
