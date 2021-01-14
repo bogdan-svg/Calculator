@@ -7,7 +7,7 @@ namespace Calculator
     class Actions
     {
                 
-        double rezultend =0 ;
+        double rezultend;
         
         char ex;
 
