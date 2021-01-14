@@ -18,7 +18,7 @@ namespace Calculator
             Console.Clear();
             Console.WriteLine($"{numberfirst} {sign} number 2");
 
-            mt.Begin(numberfirst, out double result, out double numbersecond);
+            mt.BeginPL(numberfirst, out double result, out double numbersecond);
             
             Console.Clear();
             Console.WriteLine($"{numberfirst} {sign} {numbersecond} = and or + - * /");                      
@@ -37,7 +37,7 @@ namespace Calculator
                     Console.Clear();
                     Console.WriteLine($"{result} {ex} number");
 
-                    mt.PL(ex, ref result, ref rezultend,  out double c );
+                    mt.PL(ref result, ref rezultend,  out double c );
                    
                     Console.Clear();
                     Console.WriteLine($"{rezultend} {ex} {c} = and?");                    
@@ -54,7 +54,7 @@ namespace Calculator
                     Console.Clear();
                     Console.WriteLine($"{result} {ex} number");
 
-                    mt.SB(ex, ref result, ref rezultend, out double c);
+                    mt.SB(ref result, ref rezultend, out double c);
 
                     Console.Clear();
                     Console.WriteLine($"{rezultend} {ex} {c} = and");
@@ -71,7 +71,7 @@ namespace Calculator
                     Console.Clear();
                     Console.WriteLine($"{result} {ex} number");
 
-                    mt.MUL(ex, ref result, ref rezultend, out double c);
+                    mt.MUL(ref result, ref rezultend, out double c);
 
                     Console.Clear();
                     Console.WriteLine($"{rezultend} {ex} {c} = and");
@@ -85,9 +85,6 @@ namespace Calculator
                 }
                 else if (ex == '/')
                 {
-                    Console.Clear();
-                    Console.WriteLine($"{result} {ex} number");
-
                     mt.DIV(ex, ref result, ref rezultend, out double c);
 
                     Console.Clear();
@@ -109,7 +106,10 @@ namespace Calculator
         }
         public void subtraction(double numberfirst, char sign)
         {
-            mt.Begin(numberfirst, out double result, out double numbersecond);
+            Console.Clear();
+            Console.WriteLine($"{numberfirst} {sign} number 2");
+
+            mt.BeginSB(numberfirst, out double result, out double numbersecond);
 
             Console.Clear();
             Console.WriteLine($"{numberfirst} {sign} {numbersecond} = and or + - * /");
@@ -127,7 +127,7 @@ namespace Calculator
                     Console.Clear();
                     Console.WriteLine($"{result} {ex} number");
 
-                    mt.PL(ex, ref result, ref rezultend, out double c);
+                    mt.PL(ref result, ref rezultend, out double c);
 
                     Console.Clear();
                     Console.WriteLine($"{rezultend} {ex} {c} = and?");
@@ -144,7 +144,7 @@ namespace Calculator
                     Console.Clear();
                     Console.WriteLine($"{result} {ex} number");
 
-                    mt.SB(ex, ref result, ref rezultend, out double c);
+                    mt.SB(ref result, ref rezultend, out double c);
 
                     Console.Clear();
                     Console.WriteLine($"{rezultend} {ex} {c} = and");
@@ -161,7 +161,7 @@ namespace Calculator
                     Console.Clear();
                     Console.WriteLine($"{result} {ex} number");
 
-                    mt.MUL(ex, ref result, ref rezultend, out double c);
+                    mt.MUL(ref result, ref rezultend, out double c);
 
                     Console.Clear();
                     Console.WriteLine($"{rezultend} {ex} {c} = and");
@@ -175,8 +175,6 @@ namespace Calculator
                 }
                 else if (ex == '/')
                 {
-                    Console.Clear();
-                    Console.WriteLine($"{result} {ex} number");
 
                     mt.DIV(ex, ref result, ref rezultend, out double c);
 
@@ -199,7 +197,10 @@ namespace Calculator
         }
         public void multiplication(double numberfirst, char sign)
         {
-            mt.Begin(numberfirst, out double result, out double numbersecond);
+            Console.Clear();
+            Console.WriteLine($"{numberfirst} {sign} number 2");
+
+            mt.BeginMUL(numberfirst, out double result, out double numbersecond);
 
             Console.Clear();
             Console.WriteLine($"{numberfirst} {sign} {numbersecond} = and or + - * /");
@@ -217,7 +218,7 @@ namespace Calculator
                     Console.Clear();
                     Console.WriteLine($"{result} {ex} number");
 
-                    mt.PL(ex, ref result, ref rezultend, out double c);
+                    mt.PL(ref result, ref rezultend, out double c);
 
                     Console.Clear();
                     Console.WriteLine($"{rezultend} {ex} {c} = and?");
@@ -234,7 +235,7 @@ namespace Calculator
                     Console.Clear();
                     Console.WriteLine($"{result} {ex} number");
 
-                    mt.SB(ex, ref result, ref rezultend, out double c);
+                    mt.SB(ref result, ref rezultend, out double c);
 
                     Console.Clear();
                     Console.WriteLine($"{rezultend} {ex} {c} = and");
@@ -251,7 +252,7 @@ namespace Calculator
                     Console.Clear();
                     Console.WriteLine($"{result} {ex} number");
 
-                    mt.MUL(ex, ref result, ref rezultend, out double c);
+                    mt.MUL(ref result, ref rezultend, out double c);
 
                     Console.Clear();
                     Console.WriteLine($"{rezultend} {ex} {c} = and");
@@ -265,8 +266,6 @@ namespace Calculator
                 }
                 else if (ex == '/')
                 {
-                    Console.Clear();
-                    Console.WriteLine($"{result} {ex} number");
 
                     mt.DIV(ex, ref result, ref rezultend, out double c);
 
@@ -289,7 +288,9 @@ namespace Calculator
         }
         public void division(double numberfirst, char sign)
         {
-            mt.Begin(numberfirst, out double result, out double numbersecond);
+            
+
+            mt.BeginDIV(sign, numberfirst, out double result, out double numbersecond);
 
             Console.Clear();
             Console.WriteLine($"{numberfirst} {sign} {numbersecond} = and or + - * /");
@@ -307,7 +308,7 @@ namespace Calculator
                     Console.Clear();
                     Console.WriteLine($"{result} {ex} number");
 
-                    mt.PL(ex, ref result, ref rezultend, out double c);
+                    mt.PL(ref result, ref rezultend, out double c);
 
                     Console.Clear();
                     Console.WriteLine($"{rezultend} {ex} {c} = and?");
@@ -324,7 +325,7 @@ namespace Calculator
                     Console.Clear();
                     Console.WriteLine($"{result} {ex} number");
 
-                    mt.SB(ex, ref result, ref rezultend, out double c);
+                    mt.SB(ref result, ref rezultend, out double c);
 
                     Console.Clear();
                     Console.WriteLine($"{rezultend} {ex} {c} = and");
@@ -341,7 +342,7 @@ namespace Calculator
                     Console.Clear();
                     Console.WriteLine($"{result} {ex} number");
 
-                    mt.MUL(ex, ref result, ref rezultend, out double c);
+                    mt.MUL(ref result, ref rezultend, out double c);
 
                     Console.Clear();
                     Console.WriteLine($"{rezultend} {ex} {c} = and");
@@ -355,8 +356,6 @@ namespace Calculator
                 }
                 else if (ex == '/')
                 {
-                    Console.Clear();
-                    Console.WriteLine($"{result} {ex} number");
 
                     mt.DIV(ex, ref result, ref rezultend, out double c);
 
