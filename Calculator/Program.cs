@@ -83,8 +83,9 @@ namespace Calculator
                             }
                             else
                             {
-                                Console.WriteLine("nemae takogo znaky");
-                                Console.WriteLine("exit? esc");
+                                Console.Clear();
+                                Console.WriteLine("No such sign");
+                                Console.WriteLine("esc = exit\n Press any key for continue");
                                 if (Console.ReadKey().Key == ConsoleKey.Escape)
                                 {
                                     Process.GetCurrentProcess().Kill();
@@ -95,7 +96,7 @@ namespace Calculator
                         }
                         else
                         {
-                            Console.WriteLine("exit? esc");
+                            Console.WriteLine("  esc = exit\n Press any key for continue ");
                             if (Console.ReadKey().Key == ConsoleKey.Escape)
                             {
                                 Process.GetCurrentProcess().Kill();

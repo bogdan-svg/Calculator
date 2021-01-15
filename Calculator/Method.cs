@@ -99,11 +99,10 @@ namespace Calculator
             Console.Clear();
             Console.WriteLine($"{numberfirst} {sign} {numbersecond} = {result}");
         }
-        public void Equal_1(double rezultend, char ex, double c, double result)
+        public void Equal_1(double rezultend, char sign, double c, double result)
         {
             Console.Clear();
-            Console.WriteLine($"{rezultend} ? {c} = {result}");
+            Console.WriteLine($"{rezultend} {sign} {c} = {result}");
         }
-
     }
 }

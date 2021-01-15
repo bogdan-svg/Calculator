@@ -20,13 +20,14 @@ namespace Calculator
 
             mt.BeginPL(numberfirst, out double result, out double numbersecond);
             
-            Console.Clear();
-            Console.WriteLine($"{numberfirst} {sign} {numbersecond} = and or + - * /");                      
-
-            char.TryParse(Console.ReadLine(), out ex);
+            
             while (true)
             {
-                
+                Console.Clear();
+                Console.WriteLine($"{numberfirst} {sign} {numbersecond} = and or + - * /");
+
+                char.TryParse(Console.ReadLine(), out ex);
+
                 if (ex == '=')
                 {
                     mt.Equal_0(numberfirst, sign, numbersecond, result);
@@ -40,12 +41,13 @@ namespace Calculator
                     mt.PL(ref result, ref rezultend,  out double c );
                    
                     Console.Clear();
-                    Console.WriteLine($"{rezultend} {ex} {c} = and?");                    
-                    ex = Convert.ToChar(Console.ReadLine()); // перевірити хуйня виходить подумати як замінити
+                    Console.WriteLine($"{rezultend} {ex} {c} = and?");
+                    sign = ex;
+                    ex = Convert.ToChar(Console.ReadLine()); 
 
                     if (ex == '=')
                     {
-                        mt.Equal_1(rezultend, ex, c, result);
+                        mt.Equal_1(rezultend, sign, c, result);
                         break;
                     }                                        
                 }
@@ -62,7 +64,7 @@ namespace Calculator
 
                     if (ex == '=')
                     {
-                        mt.Equal_1(rezultend, ex, c, result);
+                        mt.Equal_1(rezultend, sign, c, result);
                         break;
                     }
                 }
@@ -79,7 +81,7 @@ namespace Calculator
 
                     if (ex == '=')
                     {
-                        mt.Equal_1(rezultend, ex, c, result);
+                        mt.Equal_1(rezultend, sign, c, result);
                         break;
                     }
                 }
@@ -93,7 +95,7 @@ namespace Calculator
 
                     if (ex == '=')
                     {
-                        mt.Equal_1(rezultend, ex, c, result);
+                        mt.Equal_1(rezultend, sign, c, result);
                         break;
                     }
                 }
@@ -110,13 +112,13 @@ namespace Calculator
             Console.WriteLine($"{numberfirst} {sign} number 2");
 
             mt.BeginSB(numberfirst, out double result, out double numbersecond);
-
-            Console.Clear();
-            Console.WriteLine($"{numberfirst} {sign} {numbersecond} = and or + - * /");
-
-            char.TryParse(Console.ReadLine(), out ex);
+            
             while (true)
             {
+                Console.Clear();
+                Console.WriteLine($"{numberfirst} {sign} {numbersecond} = and or + - * /");
+
+                char.TryParse(Console.ReadLine(), out ex);
                 if (ex == '=')
                 {
                     mt.Equal_0(numberfirst, sign, numbersecond, result);
@@ -135,7 +137,7 @@ namespace Calculator
 
                     if (ex == '=')
                     {
-                        mt.Equal_1(rezultend, ex, c, result);
+                        mt.Equal_1(rezultend, sign, c, result);
                         break;
                     }
                 }
@@ -152,7 +154,7 @@ namespace Calculator
 
                     if (ex == '=')
                     {
-                        mt.Equal_1(rezultend, ex, c, result);
+                        mt.Equal_1(rezultend, sign, c, result);
                         break;
                     }
                 }
@@ -169,7 +171,7 @@ namespace Calculator
 
                     if (ex == '=')
                     {
-                        mt.Equal_1(rezultend, ex, c, result);
+                        mt.Equal_1(rezultend, sign, c, result);
                         break;
                     }
                 }
@@ -184,7 +186,7 @@ namespace Calculator
 
                     if (ex == '=')
                     {
-                        mt.Equal_1(rezultend, ex, c, result);
+                        mt.Equal_1(rezultend, sign, c, result);
                         break;
                     }
                 }
@@ -201,13 +203,13 @@ namespace Calculator
             Console.WriteLine($"{numberfirst} {sign} number 2");
 
             mt.BeginMUL(numberfirst, out double result, out double numbersecond);
-
-            Console.Clear();
-            Console.WriteLine($"{numberfirst} {sign} {numbersecond} = and or + - * /");
-
-            char.TryParse(Console.ReadLine(), out ex);
+            
             while (true)
             {
+                Console.Clear();
+                Console.WriteLine($"{numberfirst} {sign} {numbersecond} = and or + - * /");
+
+                char.TryParse(Console.ReadLine(), out ex);
                 if (ex == '=')
                 {
                     mt.Equal_0(numberfirst, sign, numbersecond, result);
@@ -226,7 +228,7 @@ namespace Calculator
 
                     if (ex == '=')
                     {
-                        mt.Equal_1(rezultend, ex, c, result);
+                        mt.Equal_1(rezultend, sign, c, result);
                         break;
                     }
                 }
@@ -243,7 +245,7 @@ namespace Calculator
 
                     if (ex == '=')
                     {
-                        mt.Equal_1(rezultend, ex, c, result);
+                        mt.Equal_1(rezultend, sign, c, result);
                         break;
                     }
                 }
@@ -260,7 +262,7 @@ namespace Calculator
 
                     if (ex == '=')
                     {
-                        mt.Equal_1(rezultend, ex, c, result);
+                        mt.Equal_1(rezultend, sign, c, result);
                         break;
                     }
                 }
@@ -275,7 +277,7 @@ namespace Calculator
 
                     if (ex == '=')
                     {
-                        mt.Equal_1(rezultend, ex, c, result);
+                        mt.Equal_1(rezultend, sign, c, result);
                         break;
                     }
                 }
@@ -288,16 +290,17 @@ namespace Calculator
         }
         public void division(double numberfirst, char sign)
         {
-            
+            Console.Clear();
+            Console.WriteLine($"{numberfirst} {sign} number 2");
 
             mt.BeginDIV(sign, numberfirst, out double result, out double numbersecond);
-
-            Console.Clear();
-            Console.WriteLine($"{numberfirst} {sign} {numbersecond} = and or + - * /");
-
-            char.TryParse(Console.ReadLine(), out ex);
+            
             while (true)
             {
+                Console.Clear();
+                Console.WriteLine($"{numberfirst} {sign} {numbersecond} = and or + - * /");
+
+                char.TryParse(Console.ReadLine(), out ex);
                 if (ex == '=')
                 {
                     mt.Equal_0(numberfirst, sign, numbersecond, result);
@@ -316,7 +319,7 @@ namespace Calculator
 
                     if (ex == '=')
                     {
-                        mt.Equal_1(rezultend, ex, c, result);
+                        mt.Equal_1(rezultend, sign, c, result);
                         break;
                     }
                 }
@@ -333,7 +336,7 @@ namespace Calculator
 
                     if (ex == '=')
                     {
-                        mt.Equal_1(rezultend, ex, c, result);
+                        mt.Equal_1(rezultend, sign, c, result);
                         break;
                     }
                 }
@@ -350,7 +353,7 @@ namespace Calculator
 
                     if (ex == '=')
                     {
-                        mt.Equal_1(rezultend, ex, c, result);
+                        mt.Equal_1(rezultend, sign, c, result);
                         break;
                     }
                 }
@@ -365,7 +368,7 @@ namespace Calculator
 
                     if (ex == '=')
                     {
-                        mt.Equal_1(rezultend, ex, c, result);
+                        mt.Equal_1(rezultend, sign, c, result);
                         break;
                     }
                 }
