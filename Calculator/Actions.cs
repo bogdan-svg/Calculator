@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace Calculator
@@ -8,26 +9,23 @@ namespace Calculator
     {
                 
         double rezultend;
+
         
+
         char ex;
 
         Method mt = new Method();
 
         public void plus(double numberfirst, char sign)
-        {
+        {           
+            mt.BeginPL(sign, numberfirst, out double result,out double numbersecond);
+
             Console.Clear();
-            Console.WriteLine($"{numberfirst} {sign} number 2");
+            Console.WriteLine($"{numberfirst} {sign} {numbersecond} = \npress = for and \n or + , - , * , /  ");
 
-            mt.BeginPL(numberfirst, out double result, out double numbersecond);
-            
-            
+            char.TryParse(Console.ReadLine(), out ex);
             while (true)
-            {
-                Console.Clear();
-                Console.WriteLine($"{numberfirst} {sign} {numbersecond} = and or + - * /");
-
-                char.TryParse(Console.ReadLine(), out ex);
-
+            {                       
                 if (ex == '=')
                 {
                     mt.Equal_0(numberfirst, sign, numbersecond, result);
@@ -35,21 +33,35 @@ namespace Calculator
                 }
                 else if (ex == '+')
                 {
-                    Console.Clear();
-                    Console.WriteLine($"{result} {ex} number");
+                    
 
-                    mt.PL(ref result, ref rezultend,  out double c );
+                    mt.PL(ex, ref result, ref rezultend,  out double c );
                    
                     Console.Clear();
-                    Console.WriteLine($"{rezultend} {ex} {c} = and?");
+                    Console.WriteLine($"{rezultend} {ex} {c} = \npress = for and \n or + , - , * , / ");
                     sign = ex;
-                    ex = Convert.ToChar(Console.ReadLine()); 
+                    ex = Convert.ToChar(Console.ReadLine());
 
                     if (ex == '=')
                     {
                         mt.Equal_1(rezultend, sign, c, result);
                         break;
-                    }                                        
+                    }
+                    else if (ex != '+' && ex != '-' && ex != '*' && ex != '/')
+                    {
+                        while (true)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("dadada");
+                            Console.WriteLine($"{numberfirst} {sign} {numbersecond} = and or + - * /");
+                            char.TryParse(Console.ReadLine(), out ex);
+                            if (ex == '+' || ex == '-' || ex == '*' || ex == '/')
+                            {
+                                break;
+                            }
+                        }
+
+                    }                        
                 }
                 else if (ex == '-')
                 {
@@ -101,24 +113,35 @@ namespace Calculator
                 }
                 else
                 {
-                    Console.WriteLine("lox");
-                    Console.ReadKey();
+                    Console.Clear();
+                    Console.WriteLine("No such sign");
+                    Console.WriteLine("esc = exit or\n Press any key for continue");
+                    if (Console.ReadKey().Key == ConsoleKey.Escape)
+                    {
+                        Process.GetCurrentProcess().Kill();
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        Console.WriteLine($"{numberfirst} {sign} {numbersecond} = \npress = for and \n or + , - , * , /  ");
+                        char.TryParse(Console.ReadLine(), out ex);                        
+                    }
                 }
             }
         }
         public void subtraction(double numberfirst, char sign)
         {
-            Console.Clear();
-            Console.WriteLine($"{numberfirst} {sign} number 2");
+           
 
-            mt.BeginSB(numberfirst, out double result, out double numbersecond);
-            
+            mt.BeginSB(sign, numberfirst, out double result, out double numbersecond);
+
+            Console.Clear();
+            Console.WriteLine($"{numberfirst} {sign} {numbersecond} = and or + - * /");
+
+            char.TryParse(Console.ReadLine(), out ex);
             while (true)
             {
-                Console.Clear();
-                Console.WriteLine($"{numberfirst} {sign} {numbersecond} = and or + - * /");
-
-                char.TryParse(Console.ReadLine(), out ex);
+                
                 if (ex == '=')
                 {
                     mt.Equal_0(numberfirst, sign, numbersecond, result);
@@ -129,7 +152,7 @@ namespace Calculator
                     Console.Clear();
                     Console.WriteLine($"{result} {ex} number");
 
-                    mt.PL(ref result, ref rezultend, out double c);
+                    mt.PL(ex, ref result, ref rezultend, out double c);
 
                     Console.Clear();
                     Console.WriteLine($"{rezultend} {ex} {c} = and?");
@@ -199,10 +222,9 @@ namespace Calculator
         }
         public void multiplication(double numberfirst, char sign)
         {
-            Console.Clear();
-            Console.WriteLine($"{numberfirst} {sign} number 2");
+            
 
-            mt.BeginMUL(numberfirst, out double result, out double numbersecond);
+            mt.BeginMUL(sign, numberfirst, out double result, out double numbersecond);
             
             while (true)
             {
@@ -220,7 +242,7 @@ namespace Calculator
                     Console.Clear();
                     Console.WriteLine($"{result} {ex} number");
 
-                    mt.PL(ref result, ref rezultend, out double c);
+                    mt.PL(ex, ref result, ref rezultend, out double c);
 
                     Console.Clear();
                     Console.WriteLine($"{rezultend} {ex} {c} = and?");
@@ -289,10 +311,7 @@ namespace Calculator
             }
         }
         public void division(double numberfirst, char sign)
-        {
-            Console.Clear();
-            Console.WriteLine($"{numberfirst} {sign} number 2");
-
+        {            
             mt.BeginDIV(sign, numberfirst, out double result, out double numbersecond);
             
             while (true)
@@ -311,7 +330,7 @@ namespace Calculator
                     Console.Clear();
                     Console.WriteLine($"{result} {ex} number");
 
-                    mt.PL(ref result, ref rezultend, out double c);
+                    mt.PL(ex, ref result, ref rezultend, out double c);
 
                     Console.Clear();
                     Console.WriteLine($"{rezultend} {ex} {c} = and?");
