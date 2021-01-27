@@ -42,7 +42,7 @@ namespace Calculator
                             else if (sign == '-')
                             {
                                 ac.subtraction(numberfirst, sign, input);
-                                Console.WriteLine("exit? esc");
+                                Console.WriteLine("Press esc for exit \nor any key for continue Program.cs");
                                 if (Console.ReadKey().Key == ConsoleKey.Escape)
                                 {
                                     Process.GetCurrentProcess().Kill();
@@ -56,7 +56,7 @@ namespace Calculator
                             else if (sign == '*')
                             {
                                 ac.multiplication(numberfirst, sign, input);
-                                Console.WriteLine("exit? esc");
+                                Console.WriteLine("Press esc for exit \nor any key for continue Program.cs");
                                 if (Console.ReadKey().Key == ConsoleKey.Escape)
                                 {
                                     Process.GetCurrentProcess().Kill();
@@ -70,7 +70,7 @@ namespace Calculator
                             else if (sign == '/')
                             {
                                 ac.division(numberfirst, sign,input);
-                                Console.WriteLine("exit? esc");
+                                Console.WriteLine("Press esc for exit \nor any key for continue Program.cs");
                                 if (Console.ReadKey().Key == ConsoleKey.Escape)
                                 {
                                     Process.GetCurrentProcess().Kill();
@@ -108,7 +108,7 @@ namespace Calculator
                 }
                 else
                 {
-                    Console.WriteLine("exit? esc");
+                    Console.WriteLine("Press esc for exit \nor any key for continue Program.cs");
                     if (Console.ReadKey().Key == ConsoleKey.Escape)
                     {
                         Process.GetCurrentProcess().Kill();
