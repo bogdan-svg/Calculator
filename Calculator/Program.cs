@@ -11,7 +11,7 @@ namespace Calculator
             Actions ac = new Actions(); 
             double numberfirst;
             char sign;
-
+            string input = null;
             
 
             while (true)
@@ -27,8 +27,8 @@ namespace Calculator
                         {
                             if (sign == '+')
                             {
-                                ac.plus(numberfirst, sign);
-                                Console.WriteLine("exit? esc");
+                                ac.plus(numberfirst, sign, input);
+                                Console.WriteLine("Press esc for exit \nor any key for continue Program.cs");
                                 if (Console.ReadKey().Key == ConsoleKey.Escape)
                                 {
                                     Process.GetCurrentProcess().Kill();
@@ -41,7 +41,7 @@ namespace Calculator
                             }
                             else if (sign == '-')
                             {
-                                ac.subtraction(numberfirst, sign);
+                                ac.subtraction(numberfirst, sign, input);
                                 Console.WriteLine("exit? esc");
                                 if (Console.ReadKey().Key == ConsoleKey.Escape)
                                 {
@@ -55,7 +55,7 @@ namespace Calculator
                             }
                             else if (sign == '*')
                             {
-                                ac.multiplication(numberfirst, sign);
+                                ac.multiplication(numberfirst, sign, input);
                                 Console.WriteLine("exit? esc");
                                 if (Console.ReadKey().Key == ConsoleKey.Escape)
                                 {
@@ -69,7 +69,7 @@ namespace Calculator
                             }
                             else if (sign == '/')
                             {
-                                ac.division(numberfirst, sign);
+                                ac.division(numberfirst, sign,input);
                                 Console.WriteLine("exit? esc");
                                 if (Console.ReadKey().Key == ConsoleKey.Escape)
                                 {

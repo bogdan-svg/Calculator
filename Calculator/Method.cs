@@ -7,8 +7,8 @@ namespace Calculator
 {
     class Method
     {
-        public string input;
-        public void BeginPL(char sign, double numberfirst, out double result,out double numbersecond)
+        
+        public void BeginPL(string input,char sign, double numberfirst, out double result,out double numbersecond)
         {
             while (true)
             {
@@ -30,7 +30,7 @@ namespace Calculator
                 }
             }
         }
-        public void BeginSB(char sign, double numberfirst, out double result, out double numbersecond)
+        public void BeginSB(string input,char sign, double numberfirst, out double result, out double numbersecond)
         {
             while (true)
             {
@@ -52,7 +52,7 @@ namespace Calculator
                 }
             }
         }
-        public void BeginMUL(char sign, double numberfirst, out double result, out double numbersecond)
+        public void BeginMUL(string input, char sign, double numberfirst, out double result, out double numbersecond)
         {
             while (true)
             {
@@ -74,7 +74,7 @@ namespace Calculator
                 }
             }
         }
-        public void BeginDIV(char sign, double numberfirst, out double result, out double numbersecond)
+        public void BeginDIV(string input, char sign, double numberfirst, out double result, out double numbersecond)
         {
             while (true)
             {                
@@ -108,11 +108,11 @@ namespace Calculator
             }
         }
 
-
-        public void PL(char ex, ref double result, ref double rezultend, out double c)
+        
+        public void PL(string input, char ex, ref double result, ref double rezultend, out double c)
         {
             while (true)
-            {
+            {                
                 Console.Clear();
                 Console.WriteLine($"{result} {ex} number");
                 input = Console.ReadLine();
@@ -132,7 +132,7 @@ namespace Calculator
                 }
             }
         }
-        public void SB(char ex, ref double result, ref double rezultend, out double c)
+        public void SB(string input, char ex, ref double result, ref double rezultend, out double c)
         {
             while (true)
             {
@@ -155,7 +155,7 @@ namespace Calculator
                 }
             }                        
         }
-        public void MUL(char ex, ref double result, ref double rezultend, out double c)
+        public void MUL(string input, char ex, ref double result, ref double rezultend, out double c)
         {
             while (true)
             {
@@ -178,7 +178,7 @@ namespace Calculator
                 }
             }                                    
         }
-        public void DIV(char ex, ref double result, ref double rezultend, out double c)
+        public void DIV(string input, char ex, ref double result, ref double rezultend, out double c)
         {
             while (true)
             {
@@ -214,12 +214,12 @@ namespace Calculator
         }
 
 
-        public void Equal_0(double numberfirst, char sign, double numbersecond, double result)
+        public void Equal_0(double numberfirst, double numbersecond, double result, char sign)
         {
             Console.Clear();
             Console.WriteLine($"{numberfirst} {sign} {numbersecond} = {result}");
         }
-        public void Equal_1(double rezultend, char sign, double c, double result)
+        public void Equal_1(double rezultend, double c, double result,char sign)
         {
             Console.Clear();
             Console.WriteLine($"{rezultend} {sign} {c} = {result}");
