@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Text;
 
 namespace Calculator
@@ -8,6 +7,7 @@ namespace Calculator
     class Method
     {
         
+<<<<<<< HEAD
         public void BeginPL(string input,char sign, double numberfirst, out double result,out double numbersecond)
         {
             while (true)
@@ -131,9 +131,34 @@ namespace Calculator
                     Console.ReadKey();
                 }
             }
+=======
+        public void Begin(double numberfirst, out double result, out double numbersecond)
+        {           
+            double.TryParse(Console.ReadLine(), out numbersecond);
+            result = numberfirst + numbersecond;
+        }
+        public void PL(char ex, ref double result, ref double rezultend, out double c)
+        {            
+            c = Convert.ToDouble(Console.ReadLine());
+            rezultend = result;
+            result += c;            
+        }
+        public void SB(char ex, ref double result, ref double rezultend, out double c)
+        {            
+            c = Convert.ToDouble(Console.ReadLine());
+            rezultend = result;
+            result -= c;
+        }
+        public void MUL(char ex, ref double result, ref double rezultend, out double c)
+        {           
+            c = Convert.ToDouble(Console.ReadLine());
+            rezultend = result;
+            result *= c;            
+>>>>>>> parent of cc380a8 (dil na 01)
         }
         public void SB(string input, char ex, ref double result, ref double rezultend, out double c)
         {
+<<<<<<< HEAD
             while (true)
             {
                 Console.Clear();
@@ -156,6 +181,15 @@ namespace Calculator
             }                        
         }
         public void MUL(string input, char ex, ref double result, ref double rezultend, out double c)
+=======
+            
+            c = Convert.ToDouble(Console.ReadLine());
+            rezultend = result;
+            result /= c;
+           
+        }
+        public void Equal_0(double numberfirst, char sign, double numbersecond, double result)
+>>>>>>> parent of cc380a8 (dil na 01)
         {
             while (true)
             {
